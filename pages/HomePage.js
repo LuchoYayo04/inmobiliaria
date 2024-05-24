@@ -1,39 +1,43 @@
 import React from "react";
+import styles from "@/styles/HomePage.module.css";
 
 const HomePage = () => {
   return (
     <React.Fragment>
       {/* Cabecera de la pagina */}
-      <header>
-        <h1>Tu Inmobiliaria</h1>
-        <nav>
+      <header className={styles.header}>
+        <h1>Inmobiliaria</h1>
+        <nav className={styles.header__nav}>
           <ul>
             <li>
-              <a href="">Inicio</a>
+              <a href="#inicio">Inicio</a>
             </li>
             <li>
-              <a href="">Propiedades</a>
+              <a href="#propiedades">Propiedades</a>
             </li>
             <li>
-              <a href="">Contacto</a>
+              <a href="#contacto">Contacto</a>
             </li>
           </ul>
         </nav>
       </header>
+
       {/* Seccion de bienvenida a la pagina */}
-      <section>
+      <section id="inicio" className={styles.inicio}>
         <h2>¡Bienvenido a la inmobiliaria que estabas buscando!</h2>
         <p>
           Somos una empresa dedicada a entregarte la mejor opción para tu
-          vivienda
+          vivienda. Somos una empresa dedicada a entregarte la mejor opción para tu
+          vivienda. Somos una empresa dedicada a entregarte la mejor opción para tu
+          vivienda. 
         </p>
       </section>
 
       {/* Seccion de propiedades */}
-      <section>
+      <section id="propiedades" className={styles.properties}>
         <h2>Propiedades disponibles</h2>
         {/* Lista de propiedades */}
-        <div>
+        <div className={styles.properties__box}>
           <h3>Nombre de la propiedad</h3>
           <p>
             Descripcion breve de la propiedad. Lorem ipsum dolor sit amet,
@@ -50,7 +54,7 @@ const HomePage = () => {
       </section>
 
       {/* Sección de contacto */}
-      <section>
+      <section id="contacto" className={styles.section__contact}>
         <h2>Contacto</h2>
         <p>¿Tienes dudas? Contáctanos</p>
         <form>
@@ -59,10 +63,15 @@ const HomePage = () => {
           <label for="email">Correo Electrónico:</label>
           <input type="email" id="email" name="email" required />
           <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" required />
+          <textarea id="mensaje" name="mensaje" required placeholder="Hola, estoy interesado en una propiedad..."/>
           <button type="submit">Enviar</button>
         </form>
       </section>
+
+      {/* Pie de pagina */}
+      <footer className={styles.footer}>
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+      </footer>
     </React.Fragment>
   );
 };
